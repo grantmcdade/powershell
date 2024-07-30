@@ -1,0 +1,12 @@
+name: Script Test
+run-name: ${{ github.actor }} script tests
+on: [push]
+jobs:
+  run-script:
+    runs-on: windows-latest
+    env:
+      scriptPath: "Scripts"
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          ${{ env.scriptPath }}/Test.ps1
