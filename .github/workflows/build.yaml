@@ -9,4 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
+          mkdir downloads
+          pushd downloads
           ${{ env.scriptPath }}/Test.ps1
+          popd
